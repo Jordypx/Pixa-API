@@ -25,6 +25,8 @@ function App() {
     <div className='container mx-auto'>
        <SearchComponent searchText={(text) => setTerm(text)}/>
 
+       {!isLoading && images.length === 0 && <h1 className="text-5xl text-center mx-auto mt-32">No images found</h1>}
+
       {isLoading ? <h1 className="text-2xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
         {images.map(image => (
           <ImageCard key={image.id} image={image}/>
