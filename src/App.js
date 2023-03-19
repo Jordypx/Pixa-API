@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ImageCard from './components/ImageCard';
+import SearchComponent from './components/SearchComponent';
 
 
 
@@ -22,6 +23,8 @@ function App() {
 
   return (
     <div className='container mx-auto'>
+       <SearchComponent />
+
       {isLoading ? <h1 className="text-2xl text-center mx-auto mt-32">Loading...</h1> : <div className="grid grid-cols-3 gap-4">
         {images.map(image => (
           <ImageCard key={image.id} image={image}/>
